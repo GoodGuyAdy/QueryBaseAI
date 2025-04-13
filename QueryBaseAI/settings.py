@@ -37,6 +37,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "QueryBaseAI.middleware.LogstashLoggingMiddleware",
 ]
 
 ROOT_URLCONF = "QueryBaseAI.urls"
@@ -99,11 +100,38 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-ELASTIC_URL = "http://localhost:9200"
+ELASTIC_HOST = "localhost"
+ELASTIC_PORT = 9200
 ELASTIC_HEADER = {"Content-Type": "application/json"}
+
+LOGSTASH_HOST = "localhost"
+LOGSTASH_PORT = 5000
 
 MILVUS_HOST = "localhost"
 MILVUS_PORT = 19530
+
 VECTOR_DIMENSION = 384
 
 CURRENT_LLM_PROVIDER = LLMProvider.ai21
+
+LOG_ALL_REQUESTS = True
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "logstash": {
+            "level": "INFO",
+            "class": "logstash.TCPLogstashHandler",
+            "host": LOGSTASH_HOST,
+            "port": LOGSTASH_PORT,
+        },
+    },
+    "loggers": {
+        "api_logger": {
+            "handlers": ["logstash"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}

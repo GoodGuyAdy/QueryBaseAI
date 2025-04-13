@@ -1,7 +1,7 @@
 """Main file for Elasticsearch Database"""
 
 import requests
-from QueryBaseAI.settings import ELASTIC_URL, ELASTIC_HEADER
+from QueryBaseAI.settings import ELASTIC_HOST, ELASTIC_PORT, ELASTIC_HEADER
 from elasticsearch import Elasticsearch, exceptions as es_exceptions
 from ExternalTools.CacheDatabase.Provider.Base import BaseStorageProvider
 
@@ -10,11 +10,14 @@ class ElasticSearchProvider(BaseStorageProvider):
     """Elasticsearch database provider class"""
 
     def __init__(self):
-        self.client = Elasticsearch(ELASTIC_URL)
+        self.elastic_url = f"http://{ELASTIC_HOST}:{ELASTIC_PORT}"
+        self.client = Elasticsearch(self.elastic_url)
 
     def check_health(self):
         """Check the health of the Elasticsearch cluster."""
-        res = requests.get(f"{ELASTIC_URL}/_cluster/health", headers=ELASTIC_HEADER)
+        res = requests.get(
+            f"{self.elastic_url}/_cluster/health", headers=ELASTIC_HEADER
+        )
         if res.status_code != 200:
             raise es_exceptions.ConnectionError("There is an issue with Elasticsearch")
         return res.status_code == 200
