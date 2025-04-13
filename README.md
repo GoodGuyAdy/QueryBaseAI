@@ -43,3 +43,16 @@ QueryBaseAI/
 ├── ExternalTools/     # Elastic, Milvus connectors
 ├── .env               # Environment variables
 └── README.md          # Project documentation
+```
+
+---
+
+## 💻 Getting Started
+
+1. git clone https://github.com/GoodGuyAdy/QueryBaseAI.git
+2. cd QueryBaseAI
+3. pip install -r requirements.txt
+4. docker-compose up --build
+5. python manage.py runserver
+
+---
