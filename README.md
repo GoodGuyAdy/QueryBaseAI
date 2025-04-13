@@ -37,11 +37,9 @@ An AI-powered hybrid search engine combining **Keyword Search**, **Vector Simila
 
 ```
 QueryBaseAI/
-├── Backend/ # Django logic (views, serializers, APIs)
-├── Core/ # Core database logics
-├── LLM/ # LLM providers (OpenAI & AI21 logic)
-├── ExternalTools/ # Elastic, Milvus connectors
-├── .env # Environment variables
-└── README.md # Project documentation
-
----
+├── Backend/           # Django logic (views, serializers, APIs)
+├── Core/              # Core database logics
+├── LLM/               # LLM providers (OpenAI & AI21 logic)
+├── ExternalTools/     # Elastic, Milvus connectors
+├── .env               # Environment variables
+└── README.md          # Project documentation
