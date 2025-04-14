@@ -49,10 +49,32 @@ QueryBaseAI/
 
 ## 💻 Getting Started
 
-1. git clone https://github.com/GoodGuyAdy/QueryBaseAI.git
-2. cd QueryBaseAI
-3. pip install -r requirements.txt
-4. docker-compose up --build
-5. python manage.py runserver
+1. Clones the repository from GitHub to your local machine
+```bash
+git clone https://github.com/GoodGuyAdy/QueryBaseAI.git
+```
+2. Changes the current directory to the cloned project folder
+```bash
+cd QueryBaseAI
+```
+3. Installs the Python dependencies listed in the requirements.txt file
+```bash
+pip install -r requirements.txt
+```
+4. Builds and starts the Docker containers defined in the docker-compose.yml file
+```bash
+docker-compose up --build
+```
+5. Runs the Django development server for the project
+```bash
+python manage.py runserver
+```
+
+---
+
+## Troubleshooting :-
+ 
+ - Ensure that your .env file contains a valid OPENAI_API_KEY or AI21_API_KEY.
+ - Make sure you have an active internet connection.
 
 ---

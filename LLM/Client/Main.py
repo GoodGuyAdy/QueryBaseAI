@@ -14,7 +14,7 @@ def llm_client():
 
     if CURRENT_LLM_PROVIDER == LLMProvider.open_ai:
         client = ChatOpenAI(
-            api_key=os.environ.get("AI21_API_KEY"),
+            api_key=os.environ.get("OPENAI_API_KEY"),
             model="gpt-3.5-turbo",
             max_tokens=1024,
             temperature=0.4,
