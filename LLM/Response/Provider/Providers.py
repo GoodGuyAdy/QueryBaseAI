@@ -31,7 +31,7 @@ class AIResponseProvider:
         """
 
         response = self.client.generate([prompt])
-        return response
+        return response.generations[0][0].text
 
     def generate_ai21_response(self, query, context):
         """
