@@ -10,6 +10,11 @@ An AI-powered hybrid search engine combining **Keyword Search**, **Vector Simila
 
 ---
 
+[![Postman Collection](https://img.shields.io/badge/Postman-Collection-a)](https://www.postman.com/blue-station-79898/workspace/querybaseai)
+For an easier experience with the API, you can explore my Postman collection.
+
+---
+
 ## 🔧 Tech Stack
 
 | Layer         | Stack                                  |
