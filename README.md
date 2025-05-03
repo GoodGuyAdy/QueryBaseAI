@@ -24,7 +24,7 @@ For an easier experience with the API, you can explore my Postman collection.
 | Vector Store  | Milvus                                 |
 | Text Search   | Elasticsearch                          |
 | Logging       | Logstash, Kibana (ELK Stack)           |
-| Orchestration | Docker, Docker Compose                 |
+| Deployment    | Docker, Docker Compose                 |
 
 ---
 
